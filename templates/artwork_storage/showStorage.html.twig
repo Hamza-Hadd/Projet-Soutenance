@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ArtworkStorage{% endblock %}
+
+{% block body %}
+<h1>ArtworkStorage</h1>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ artwork_storage.id }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="{{ path('artwork_storage_index') }}">back to list</a>
+
+<a href="{{ path('artwork_storage_edit', {'id': artwork_storage.id}) }}">edit</a>
+
+{{ include('artwork_storage/_delete_form.html.twig') }}
+{% endblock %}

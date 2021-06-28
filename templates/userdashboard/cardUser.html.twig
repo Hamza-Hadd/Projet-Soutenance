@@ -1,0 +1,20 @@
+<div class="card" style=" height:35rem">
+    {% if artwork.imageName %}
+    <div class="artworkImage">
+        <a href={{ path('user_profile', {'user_id': user.id}) }}></a> <img
+            src="{{vich_uploader_asset(app.user, 'imageFile') }}" alt="artworkImage" class="card-img-top"
+            style="width:100%; height: 25rem; object-fit:cover">
+    </div>
+    {% endif %}
+    <div class="card-body">
+        <h5 class="card-title">{{ user.username}}</h5>
+        <p class="card-text">{{ user.description }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+
+    </ul>
+    <div class="card-body">
+        {#<a href={{ path('artwork_card', {'id': artwork.id}) }} class="card-link">Card link</a>#}
+
+    </div>
+</div>

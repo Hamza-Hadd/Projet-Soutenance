@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Accueil
+{% endblock %}
+
+{% block body %}
+
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{vich_uploader_asset(artworks,'imageCoverFile')}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="" {{vich_uploader_asset(artworks.,'imageCoverFile')}}"" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="" {{vich_uploader_asset(artworks,'imageCoverFile')}}"" class="d-block w-100" alt="...">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Top Crypt'Art de la semaine</h2>
+
+    <div class="row">
+        {% for artwork in artworks %}
+        <div class="col-md-3 col-sm-4">
+            {% include 'artwork/card.html.twig' %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <hr>
+
+    <h2>Top Creator de la semaine</h2>
+
+    <div class="row">
+        {% for i in 0..2 %}
+        <div class="col-md-4 col-sm-6">
+            {% include 'userdashboard/userCard.html.twig' %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

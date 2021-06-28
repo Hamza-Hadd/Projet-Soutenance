@@ -1,0 +1,20 @@
+<div class="card" style=" height:35rem">
+    {% if artwork.imageName %}
+    <div class="artworkImage">
+        <a href={{ path('showArtwork', {'artwork_id': artwork.id}) }}></a> <img
+            src="{{vich_uploader_asset(artwork, 'imageFile') }}" alt="artworkImage" class="card-img-top"
+            style="width:100%; height: 25rem; object-fit:cover">
+    </div>
+    {% endif %}
+    <div class="card-body">
+        <h5 class="card-title">{{ artwork.title }}</h5>
+        <p class="card-text">{{ artwork.price }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+
+    </ul>
+    <div class="card-body">
+        {#<a href={{ path('artwork_card', {'id': artwork.id}) }} class="card-link">Card link</a>#}
+        <a href="#" class="card-link">Another link</a>
+    </div>
+</div>
